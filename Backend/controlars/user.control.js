@@ -1,7 +1,7 @@
 import User from "../models/auth.model.js"
 import bcrypt from "bcrypt";
 
-//http://localhost:3000/api/v1/user/_id
+//http://localhost:4000/api/v1/user/_id
 export const updateUser = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -25,7 +25,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/user/_:id
+//http://localhost:4000/api/v1/user/_:id
 export const deleteUser = async (req, res) => {
   try {
     const deletedUser = await User.findByIdAndDelete(req.params.id);

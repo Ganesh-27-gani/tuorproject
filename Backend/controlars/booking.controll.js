@@ -1,7 +1,7 @@
 import Booking from "../models/booking.model.js";
 
 
-//http://localhost:3000/api/v1/booking/
+//http://localhost:4000/api/v1/booking/
 
 export const createBooking = async (req, res) => {
   const { tourId, fullName, phone, date, guests, totalAmount } = req.body;
@@ -33,7 +33,7 @@ export const createBooking = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/booking/allbooking
+//http://localhost:4000/api/v1/booking/allbooking
 
 
  
@@ -60,7 +60,7 @@ export const getAllBookings = async (req, res) => {
 };
 
 
-//http://localhost:3000/api/v1/booking/user/:userid
+//http://localhost:4000/api/v1/booking/user/:userid
 
 export const getUserBookings = async (req, res) => {
   try {
@@ -71,7 +71,7 @@ export const getUserBookings = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/booking/:id
+//http://localhost:4000/api/v1/booking/:id
 
 export const deleteBooking = async (req, res) => {
   try {

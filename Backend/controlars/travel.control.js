@@ -3,7 +3,7 @@ import Travel from "../models/travel.model.js"
 
 
 
-//http://localhost:3000/api/v1/travel/featured
+//http://localhost:4000/api/v1/travel/featured
 
 
 export const createTour = async (req, res) => {
@@ -24,7 +24,7 @@ export const createTour = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/travel/getfeaturedtuor
+//http://localhost:4000/api/v1/travel/getfeaturedtuor
 export const getFeaturedTours = async (req, res) => {
   try {
     const tours = await Travel.find({ isFeatured: true });
@@ -34,7 +34,7 @@ export const getFeaturedTours = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/travel/getalltuors
+//http://localhost:4000/api/v1/travel/getalltuors
 export const getAllTours = async (req, res) => {
   try {
     const tours = await Travel.find();
@@ -52,7 +52,7 @@ export const getAllTours = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/travel/_id
+//http://localhost:4000/api/v1/travel/_id
 
 export const getTourById = async (req, res) => {
   try {
@@ -66,7 +66,7 @@ export const getTourById = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/travel/_:id
+//http://localhost:4000/api/v1/travel/_:id
 export const updateTour = async (req, res) => {
   try {
     const updated = await Travel.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -78,7 +78,7 @@ export const updateTour = async (req, res) => {
   }
 };
 
-//http://localhost:3000/api/v1/travel/_:id
+//http://localhost:4000/api/v1/travel/_:id
 
 export const deleteTour = async (req, res) => {
   try {

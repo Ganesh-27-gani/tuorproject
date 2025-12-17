@@ -6,7 +6,7 @@ const generateToken = (user) => {
     return jwt.sign({ id: user._id, role : user.role }, process.env.JWT_SECRET_CODE, { expiresIn: "50d" })
 }
 
-//http://localhost:3000/api/v1/auth/registeruser
+//http://localhost:4000/api/v1/auth/registeruser
 export const registerUser = async (req, res, next) => {
     const { name, email, password, role } = req.body
    
@@ -33,7 +33,7 @@ export const registerUser = async (req, res, next) => {
 }
 
 
-//http://localhost:3000/api/v1/auth/loginuser
+//http://localhost:4000/api/v1/auth/loginuser
 
 export const loginUser = async (req, res, next) => {
   const { email, password } = req.body;
