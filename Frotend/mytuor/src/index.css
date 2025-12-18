@@ -1,1 +1,18 @@
 
+ .gallery{
+    width: 47%;
+    border-radius: 10px;
+
+ }
+ .gallery:hover{
+     transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(217, 25, 25, 0.2);
+  
+ }
+ .content h6{
+   margin-left: 29px;
+ }
+ .content ul li{
+ list-style-type: none;
+ margin-bottom: 16px;
+ }
