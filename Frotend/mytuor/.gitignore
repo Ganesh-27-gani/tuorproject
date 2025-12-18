@@ -22,4 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Videos
+*.mp4
+*.mov
+*.avi
+*.mkv
 
+# Large assets
+/assets/videos/
+/public/videos/
