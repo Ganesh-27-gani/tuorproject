@@ -4,9 +4,9 @@ import { createTour, deleteTour, getAllTours, getFeaturedTours, getTourById, upd
 const router = express.Router()
 
 
-router.post("/createtuor", createTour);
-router.get("/getfeaturedtuor", getFeaturedTours)
+router.post("/", createTour);
 router.get('/', getAllTours)
+router.get("/featured", getFeaturedTours)
 router.get("/:id", getTourById);
 router.put("/:id", updateTour)
 router.delete("/:id", deleteTour);

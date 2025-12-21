@@ -15,7 +15,7 @@ const Feature = () => {
         data: tourResponse,
         error,
         loading,
-    } = useFetch(`${BASE_URL}/travel/`);
+    } = useFetch(`${BASE_URL}/travel/featured`);
 
     const data = tourResponse?.data || [];
 
