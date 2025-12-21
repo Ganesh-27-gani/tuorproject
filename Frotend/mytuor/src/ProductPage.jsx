@@ -118,14 +118,18 @@ const ProductPage = () => {
       toast.warning("Please enter a review message.");
       return;
     }
+    if (selectedRating === 0) {
+      toast.warning("Please select a rating");
+      return;
+    }
 
     const newReview = { text: reviewText, rating: selectedRating };
-    setReviews([...reviews, newReview]);
+    setReviews(reviews => [...reviews, newReview]);
     setReviewText('');
     setSelectedRating(0);
   };
- 
-  
+
+
 
   if (!tour) {
     return (
@@ -159,7 +163,7 @@ const ProductPage = () => {
           </p>
         </div>
 
-         
+
         <div style={{ backgroundColor: "#fafafaff", borderRadius: "10px", marginRight: "93px" }} className='mt-4'>
           <h3>Reviews ({reviews.length})</h3>
           <div style={{ fontSize: "30px", cursor: "pointer", marginBottom: "10px" }}>
@@ -169,31 +173,63 @@ const ProductPage = () => {
               <IoMdStarOutline key={i} onClick={() => handleStarClick(i)} style={{ color: "#f99835" }} />
             ))}
           </div>
-
-          <div className="input-group mb-3" style={{ position: 'relative' }}>
+          <div className="input-group mb-3 position-relative">
             <input
               type="text"
               className="form-control rounded-pill"
-              placeholder="Share your thoughts"
+              placeholder="Share your thoughts..."
               value={reviewText}
               onChange={(e) => setReviewText(e.target.value)}
-              style={{ padding: "15px" }}
+              style={{ padding: "15px 90px 15px 20px" }}
             />
-            <button className="btn btn-warning text-light rounded-pill mt-1" type="button" onClick={handleSubmit} style={{ position: "absolute", right: "10px", top: "5px" }}>Submit</button>
+
+            <button
+              className="btn btn-warning text-light rounded-pill"
+              type="button"
+              onClick={handleSubmit}
+              style={{
+                position: "absolute",
+                right: "6px",
+                top: "6px",
+                padding: "8px 18px",
+                fontWeight: "bold"
+              }}
+            >
+              Submit
+            </button>
           </div>
 
+          {reviews.length === 0 && (
+            <p className="text-muted">No reviews yet</p>
+          )}
+
           {reviews.map((review, index) => (
-            <div key={index} style={{ backgroundColor: "#fff", borderRadius: "8px", padding: "10px", marginTop: "10px" }}>
-              <div style={{ color: "#f99835", fontSize: "20px" }}>
-                {[...Array(review.rating)].map((_, i) => <IoMdStar key={i} />)}
+            <div
+              key={index}
+              style={{
+                backgroundColor: "#fff",
+                borderRadius: "10px",
+                padding: "12px",
+                marginTop: "10px",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.05)"
+              }}
+            >
+              <div style={{ color: "#f99835", fontSize: "18px" }}>
+                {[...Array(review.rating)].map((_, i) => (
+                  <IoMdStar key={i} />
+                ))}
               </div>
-              <p style={{ margin: 0 }}>{review.text}</p>
+
+              <p style={{ margin: "5px 0 0", fontSize: "15px" }}>
+                {review.text}
+              </p>
             </div>
           ))}
+
         </div>
       </div>
 
-      
+
       <div style={{ backgroundColor: "#fafafa", width: "30%" }} className="mt-3 me-4 p-4 rounded shadow-sm">
         <p><strong className="fs-4">{tour.price} ₹</strong> /Per person <span className="ms-2 text-warning">({reviews.length} reviews)</span></p>
         <hr />
@@ -209,12 +245,12 @@ const ProductPage = () => {
         </p>
         <button className="btn w-100" style={{ backgroundColor: '#f99835' }} onClick={handleBooking}>Book Now</button>
 
-        
-        
-          <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-            <button className="btn btn-primary" onClick={() => navigate(`/edit-tour/${tour._id}`)}>Edit</button>
-           </div>
-     
+
+
+        <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+          <button className="btn btn-primary" onClick={() => navigate(`/edit-tour/${tour._id}`)}>Edit</button>
+        </div>
+
       </div>
     </div>
   );
