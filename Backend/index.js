@@ -43,6 +43,8 @@ console.log("MongoDB Connected");
  }
 }
 
+
+
 app.use((err, req, res, next) => {
   console.error("GLOBAL ERROR:", err);
   res.status(500).json({ success: false, message: err.message });
