@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react';
 import world from './assets/images/world.png';
 import hero1 from './assets/images/hero-img01.jpg';
 import hero2 from './assets/images/hero-img02.jpg';
- 
-const herovideo = "/hero-video.mp4";
+import herovideo from './assets/images/videos/hero-video.mp4';
+
+// const herovideo = "/hero-video.mp4";
 
 const Static = () => {
   const videoRef = useRef(null);
