@@ -107,8 +107,7 @@ import { Link } from 'react-router-dom';
 import { useFetch } from './Hooks/useFetch';
 import { BASE_URL } from './utils/config';
 
-// Import images
-import img1 from './assets/images/tour-img01.jpg';
+ import img1 from './assets/images/tour-img01.jpg';
 import img2 from './assets/images/tour-img02.jpg';
 import img3 from './assets/images/tour-img03.jpg';
 import img4 from './assets/images/tour-img04.jpg';

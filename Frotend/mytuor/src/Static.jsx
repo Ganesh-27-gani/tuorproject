@@ -4,8 +4,7 @@ import hero1 from './assets/images/hero-img01.jpg';
 import hero2 from './assets/images/hero-img02.jpg';
 import herovideo from './assets/images/hero-video.mp4';
 
-// const herovideo = "/hero-video.mp4";
-
+ 
 const Static = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
