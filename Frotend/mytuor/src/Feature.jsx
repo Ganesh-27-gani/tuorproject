@@ -38,8 +38,7 @@ const Feature = () => {
                     width: "150px",
                     padding: "5px 18px",
 
-                }}
-            >
+                }} >
                 Explore
             </h1>
             <h1 style={{ fontSize: '40px' }}>Our featured tours</h1>
