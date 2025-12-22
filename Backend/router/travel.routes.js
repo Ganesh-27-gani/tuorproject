@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post("/", createTour);
 router.get('/', getAllTours)
-router.get("/featured", getFeaturedTours)
+router.get("/featured", getFeaturedTours);
 router.get("/:id", getTourById);
 router.put("/:id", updateTour)
 router.delete("/:id", deleteTour);

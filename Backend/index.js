@@ -26,6 +26,7 @@ app.use(
   })
 );
 
+ 
 app.use(express.json());
 
 app.use("/api/v1/auth",authRouter)
@@ -33,7 +34,7 @@ app.use("/api/v1/travel", travelRouter)
 app.use("/api/v1/booking", bookingRouter)
 app.use("/api/v1/user", userRouter)
 
-
+ 
 const connectDB = async() =>{
  try{
   await mongoose.connect(process.env.MONGO_URI)
